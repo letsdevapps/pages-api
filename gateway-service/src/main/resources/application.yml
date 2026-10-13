@@ -1,19 +1,25 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: gateway
 
   cloud:
-    discovery:
-      enabled: true
-
     gateway:
-      routes:
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-            - Path=/products/**
+      server:
+        webflux:
+          routes:
+            - id: product-service
+              uri: lb://product-service
+              predicates:
+                - Path=/api/products/**
+              filters:
+                - StripPrefix=2
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: ${EUREKA_CLIENT_SERVICE_URL}
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
