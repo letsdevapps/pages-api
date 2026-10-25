@@ -1,4 +1,4 @@
-package com.pro.apigateway.product_service;
+package com.pro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
