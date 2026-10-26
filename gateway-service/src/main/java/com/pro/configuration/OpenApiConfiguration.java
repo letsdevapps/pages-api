@@ -1,4 +1,4 @@
-package com.pro.apigateway.product_service.configuration;
+package com.pro.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
